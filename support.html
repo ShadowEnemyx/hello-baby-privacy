@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Support for the Hello, Baby app">
+    <title>Hello, Baby - Support</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --ink: #173b31;
+        --muted: #52655f;
+        --paper: #fbfaf5;
+        --card: #ffffff;
+        --accent: #dcefe5;
+        --line: #d8e1dc;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: linear-gradient(145deg, #edf6ed 0%, var(--paper) 46%, #f5eee3 100%);
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.65;
+      }
+      main {
+        width: min(800px, calc(100% - 32px));
+        margin: 48px auto;
+        padding: clamp(24px, 5vw, 56px);
+        background: color-mix(in srgb, var(--card) 94%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: 0 18px 50px rgb(41 73 58 / 12%);
+      }
+      h1, h2 { line-height: 1.15; }
+      h1 { margin: 0; font-size: clamp(2.1rem, 7vw, 4rem); }
+      h2 { margin: 2.2rem 0 0.75rem; font-size: 1.35rem; }
+      p, li { font-size: 1.05rem; }
+      a { color: #1d6149; font-weight: 700; }
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #39705b;
+        font-family: system-ui, sans-serif;
+        font-size: .78rem;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .lead { color: var(--muted); font-size: 1.15rem; }
+      .notice {
+        margin: 1.6rem 0;
+        padding: 18px 20px;
+        background: var(--accent);
+        border-radius: 14px;
+      }
+      .language-switch { display: flex; gap: 8px; margin-bottom: 28px; font-family: system-ui, sans-serif; }
+      button { border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+      button[aria-pressed="true"] { background: var(--ink); color: white; }
+      [hidden] { display: none !important; }
+      footer { margin-top: 3rem; color: var(--muted); font-size: .92rem; }
+      @media (prefers-color-scheme: dark) {
+        :root { --ink: #e5f1ea; --muted: #b7c9be; --paper: #15251e; --card: #1b3027; --accent: #294e3d; --line: #3c584b; }
+        body { background: linear-gradient(145deg, #102018, #15251e 50%, #292218); }
+        a { color: #9dddc0; }
+        button[aria-pressed="true"] { background: #e5f1ea; color: #173b31; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="language-switch" aria-label="Language selection">
+        <button type="button" data-language="de" aria-pressed="true">Deutsch</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+      </nav>
+
+      <article id="de">
+        <p class="eyebrow">Hello, Baby</p>
+        <h1>Support</h1>
+        <p class="lead">Hilfe zu Hello, Baby und deinen lokalen App-Daten.</p>
+        <p class="notice"><strong>Wir helfen gerne:</strong> Melde Fehler, stelle Fragen oder teile Verbesserungsvorschläge über unser Support-Formular auf GitHub mit.</p>
+        <h2>Kontakt</h2>
+        <p><a href="https://github.com/ShadowEnemyx/hello-baby-privacy/issues/new/choose">Support-Anfrage erstellen</a></p>
+        <p>Bitte veröffentliche dort keine Namen von Kindern, Geburtsdaten, Notizen oder Screenshots mit persönlichen Daten. Support-Anfragen auf GitHub sind öffentlich sichtbar.</p>
+        <h2>Häufige Fragen</h2>
+        <p><strong>Wo sind meine Daten gespeichert?</strong><br>Alle Profilangaben, Notizen, Orientierungspunkte und Aktivitäten bleiben lokal auf deinem Gerät.</p>
+        <p><strong>Wie kann ich Benachrichtigungen ändern?</strong><br>Öffne in der App Einstellungen und passe die Erinnerungen an. Zusätzlich kannst du sie jederzeit in den Systemeinstellungen deines Geräts deaktivieren.</p>
+        <p><strong>Wie lösche ich meine Daten?</strong><br>Wähle in den Einstellungen „App zurücksetzen“. Dadurch werden die lokal gespeicherten App-Daten gelöscht.</p>
+        <p><strong>Die App zeigt einen falschen Zeitraum.</strong><br>Prüfe in den Einstellungen den errechneten Geburtstermin, das tatsächliche Geburtsdatum und gegebenenfalls die Angaben zur Frühgeburt.</p>
+        <h2>Datenschutz</h2>
+        <p>Details zur Datenverarbeitung findest du in der <a href="./">Datenschutzerklärung</a>.</p>
+      </article>
+
+      <article id="en" hidden>
+        <p class="eyebrow">Hello, Baby</p>
+        <h1>Support</h1>
+        <p class="lead">Help with Hello, Baby and your local app data.</p>
+        <p class="notice"><strong>We are here to help:</strong> Report a problem, ask a question, or share a suggestion through our GitHub support form.</p>
+        <h2>Contact</h2>
+        <p><a href="https://github.com/ShadowEnemyx/hello-baby-privacy/issues/new/choose">Create a support request</a></p>
+        <p>Please do not post children’s names, birth dates, notes, or screenshots containing personal information. GitHub support requests are publicly visible.</p>
+        <h2>Frequently asked questions</h2>
+        <p><strong>Where is my data stored?</strong><br>All profile details, notes, guideposts, and activities stay locally on your device.</p>
+        <p><strong>How can I change notifications?</strong><br>Open Settings in the app and adjust reminders. You can also turn them off at any time in your device settings.</p>
+        <p><strong>How do I delete my data?</strong><br>Choose “Reset app” in Settings. This removes locally stored app data.</p>
+        <p><strong>The app shows an incorrect period.</strong><br>In Settings, check the due date, actual birth date, and, where applicable, premature-birth information.</p>
+        <h2>Privacy</h2>
+        <p>For details about data processing, see the <a href="./">Privacy Policy</a>.</p>
+      </article>
+      <footer>Hello, Baby · Support</footer>
+    </main>
+    <script>
+      const buttons = document.querySelectorAll('[data-language]');
+      const articles = document.querySelectorAll('article');
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const language = button.dataset.language;
+        document.documentElement.lang = language;
+        articles.forEach((article) => { article.hidden = article.id !== language; });
+        buttons.forEach((item) => item.setAttribute('aria-pressed', item === button));
+      }));
+    </script>
+  </body>
+</html>
