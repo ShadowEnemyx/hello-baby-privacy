@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hello, Baby begleitet Eltern durch Wachstums- und Lernphasen.">
+    <title>Hello, Baby - Wachstums- und Lernphasen</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --forest: #173b31;
+        --cream: #fbfaf5;
+        --sage: #dcefe5;
+        --peach: #f4e4d5;
+        --muted: #52655f;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--forest);
+        background: var(--cream);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.55;
+      }
+      .hero {
+        min-height: 68vh;
+        padding: 28px max(24px, calc((100vw - 1120px) / 2));
+        background: radial-gradient(circle at 82% 16%, #f6d9bb 0 8%, transparent 25%), radial-gradient(circle at 12% 82%, #cfe8d7 0 13%, transparent 34%), linear-gradient(145deg, #eff7ef, #fbfaf5 50%, #f6eadf);
+      }
+      nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-family: system-ui, sans-serif; }
+      .brand { color: var(--forest); font-weight: 850; text-decoration: none; font-size: 1.1rem; }
+      .nav-link, .button { color: var(--forest); font-weight: 750; text-decoration: none; }
+      .nav-link { font-size: .92rem; }
+      .language-switch { display: flex; gap: 8px; }
+      button { border: 1px solid #b8cec0; border-radius: 999px; padding: 7px 12px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+      button[aria-pressed="true"] { background: var(--forest); color: #fff; }
+      .hero-content { max-width: 710px; margin: clamp(72px, 15vh, 150px) 0 clamp(48px, 10vh, 100px); }
+      .eyebrow { margin: 0 0 12px; color: #39705b; font-family: system-ui, sans-serif; font-size: .78rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+      h1 { max-width: 680px; margin: 0; font-size: clamp(3rem, 8vw, 6.8rem); line-height: .94; letter-spacing: -.055em; }
+      .lead { max-width: 570px; margin: 26px 0 30px; color: var(--muted); font-size: clamp(1.16rem, 2vw, 1.4rem); }
+      .button { display: inline-block; padding: 13px 20px; border-radius: 999px; background: var(--forest); color: white; font-family: system-ui, sans-serif; font-size: .95rem; }
+      .store-note { margin: 14px 0 0; color: var(--muted); font-family: system-ui, sans-serif; font-size: .86rem; }
+      section { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 96px 0; }
+      h2 { max-width: 640px; margin: 0; font-size: clamp(2.15rem, 5vw, 4.2rem); line-height: 1; letter-spacing: -.04em; }
+      .section-lead { max-width: 600px; margin: 20px 0 0; color: var(--muted); font-size: 1.18rem; }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+      .card { min-height: 235px; padding: 28px; border-radius: 22px; background: var(--sage); }
+      .card:nth-child(2) { background: var(--peach); }
+      .card:nth-child(3) { background: #e9eee1; }
+      .number { color: #39705b; font-family: system-ui, sans-serif; font-size: .8rem; font-weight: 850; letter-spacing: .1em; }
+      h3 { margin: 42px 0 10px; font-size: 1.6rem; line-height: 1.1; }
+      .card p { margin: 0; font-size: 1.05rem; }
+      .promise { border-radius: 28px; padding: clamp(32px, 7vw, 78px); background: var(--forest); color: #eef7f0; }
+      .promise p { max-width: 650px; margin: 22px 0 0; color: #c8d9cc; font-size: clamp(1.15rem, 2vw, 1.35rem); }
+      .promise a { color: #fff; }
+      footer { padding: 34px 24px; text-align: center; color: var(--muted); font-family: system-ui, sans-serif; font-size: .9rem; }
+      footer a { color: inherit; }
+      [hidden] { display: none !important; }
+      @media (prefers-color-scheme: dark) {
+        :root { --forest: #e5f1ea; --cream: #15251e; --sage: #294e3d; --peach: #523d31; --muted: #b7c9be; }
+        .hero { background: radial-gradient(circle at 82% 16%, #533d2d 0 8%, transparent 25%), radial-gradient(circle at 12% 82%, #214832 0 13%, transparent 34%), #15251e; }
+        .brand, .nav-link, button { color: var(--forest); }
+        button[aria-pressed="true"], .button { background: #e5f1ea; color: #173b31; }
+        .card:nth-child(3) { background: #344331; }
+        .promise { background: #0c1912; }
+      }
+      @media (max-width: 720px) {
+        .nav-link { display: none; }
+        .cards { grid-template-columns: 1fr; }
+        section { width: min(100% - 32px, 1120px); padding: 68px 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <a class="brand" href="./hello-baby.html">Hello, Baby</a>
+        <a class="nav-link" href="./support.html">Support</a>
+        <div class="language-switch" aria-label="Language selection">
+          <button type="button" data-language="de" aria-pressed="true">DE</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
+      <div class="hero-content" id="de">
+        <p class="eyebrow">Für die erste Zeit mit deinem Kind</p>
+        <h1>Verstehen, was sich gerade verändert.</h1>
+        <p class="lead">Hello, Baby begleitet dich durch altersbezogene Wachstums- und Lernphasen - mit ruhigen Erklärungen, Ideen für gemeinsame Zeit und Raum für eure Beobachtungen.</p>
+        <a class="button" href="./support.html">Support &amp; Hilfe</a>
+        <p class="store-note">Demnächst im App Store verfügbar.</p>
+      </div>
+      <div class="hero-content" id="en" hidden>
+        <p class="eyebrow">For your baby’s early years</p>
+        <h1>Understand what is changing right now.</h1>
+        <p class="lead">Hello, Baby guides you through age-based growth and learning phases with gentle explanations, ideas for time together, and space for your own observations.</p>
+        <a class="button" href="./support.html">Support &amp; help</a>
+        <p class="store-note">Coming soon to the App Store.</p>
+      </div>
+    </div>
+    <section id="de-features">
+      <div id="de-content">
+        <p class="eyebrow">Begleitung statt Vorhersage</p>
+        <h2>Eine klare Orientierung für euren Alltag.</h2>
+        <p class="section-lead">Entwicklung verläuft bei jedem Kind anders. Hello, Baby hilft, Veränderungen einzuordnen, ohne sie zu bewerten oder medizinische Aussagen zu treffen.</p>
+        <div class="cards">
+          <article class="card"><p class="number">01</p><h3>Wachstums- &amp; Lernphasen</h3><p>Sieh auf einen Blick, welche Phase gerade aktiv ist und was sich im Alltag möglicherweise zeigen kann.</p></article>
+          <article class="card"><p class="number">02</p><h3>Gemeinsam entdecken</h3><p>Finde altersbezogene Spielideen und halte fest, was euch Freude gemacht hat.</p></article>
+          <article class="card"><p class="number">03</p><h3>Ganz persönlich</h3><p>Notizen und Orientierungspunkte bleiben bei dir und helfen dir, euren eigenen Weg festzuhalten.</p></article>
+        </div>
+      </div>
+      <div id="en-content" hidden>
+        <p class="eyebrow">Guidance, not prediction</p>
+        <h2>A clear perspective for everyday life.</h2>
+        <p class="section-lead">Every child develops differently. Hello, Baby helps put changes into context without judging them or making medical claims.</p>
+        <div class="cards">
+          <article class="card"><p class="number">01</p><h3>Growth &amp; learning phases</h3><p>See at a glance which phase is active and what may show up in everyday life.</p></article>
+          <article class="card"><p class="number">02</p><h3>Discover together</h3><p>Find age-based activity ideas and keep track of what you enjoyed together.</p></article>
+          <article class="card"><p class="number">03</p><h3>Truly personal</h3><p>Notes and guideposts stay with you and help you capture your own journey.</p></article>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="promise" id="de-promise"><p class="eyebrow">Privat by design</p><h2>Deine Daten bleiben auf deinem Gerät.</h2><p>Hello, Baby verwendet keine Konten, Werbung oder Analyse-Tracking. <a href="./">Mehr zum Datenschutz</a>.</p></div>
+      <div class="promise" id="en-promise" hidden><p class="eyebrow">Private by design</p><h2>Your data stays on your device.</h2><p>Hello, Baby uses no accounts, advertising, or analytics tracking. <a href="./">Learn more about privacy</a>.</p></div>
+    </section>
+    <footer><span id="de-footer">Hello, Baby · <a href="./support.html">Support</a> · <a href="./">Datenschutz</a></span><span id="en-footer" hidden>Hello, Baby · <a href="./support.html">Support</a> · <a href="./">Privacy</a></span></footer>
+    <script>
+      const buttons = document.querySelectorAll('[data-language]');
+      const languageSections = ['de', 'en'];
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const language = button.dataset.language;
+        document.documentElement.lang = language;
+        document.querySelector('.hero-content#de').hidden = language !== 'de';
+        document.querySelector('.hero-content#en').hidden = language !== 'en';
+        document.getElementById('de-content').hidden = language !== 'de';
+        document.getElementById('en-content').hidden = language !== 'en';
+        document.getElementById('de-promise').hidden = language !== 'de';
+        document.getElementById('en-promise').hidden = language !== 'en';
+        document.getElementById('de-footer').hidden = language !== 'de';
+        document.getElementById('en-footer').hidden = language !== 'en';
+        buttons.forEach((item) => item.setAttribute('aria-pressed', item === button));
+      }));
+    </script>
+  </body>
+</html>
